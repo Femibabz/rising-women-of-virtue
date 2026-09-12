@@ -486,23 +486,34 @@ section {
 
 .portal-features {
   list-style: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .portal-features li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-weight: 500;
-  font-size: 1rem;
+  position: relative;
+  padding-left: 1.6rem;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(40, 46, 43, 0.85);
 }
 
 .portal-features li::before {
   content: "✦";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
   font-size: 0.85rem;
+  color: var(--color-gold);
+}
+
+.portal-features li strong {
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-right: 0.35rem;
 }
 
 .portal-ngo .portal-features li::before {
@@ -902,6 +913,19 @@ section {
 }
 
 /* Forms styling */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
