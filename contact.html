@@ -219,7 +219,7 @@
           </div>
           
           <div class="form-group">
-            <label class="form-label" for="contact-message">How can we support you?</label>
+            <label class="form-label" id="label-contact-message" for="contact-message">How can we support you?</label>
             <textarea id="contact-message" class="form-control" placeholder="Share your message or group preference with us." required></textarea>
           </div>
           
@@ -321,13 +321,23 @@
       }
     });
 
-    // Form notification toggles
+    // Form notification & label toggles
     function updateFormNotice(value) {
       document.querySelectorAll(".form-notice").forEach(n => n.style.display = "none");
+      const messageLabel = document.getElementById("label-contact-message");
+      const messageInput = document.getElementById("contact-message");
+
       if (value === "ngo") {
         document.getElementById("notice-ngo").style.display = "block";
+        if (messageLabel) messageLabel.textContent = "How can we support you?";
+        if (messageInput) messageInput.placeholder = "Share your message or group preference with us.";
       } else if (value === "volunteer") {
         document.getElementById("notice-volunteer").style.display = "block";
+        if (messageLabel) messageLabel.textContent = "Kindly describe the Pledge/Volunteer you will like to offer.";
+        if (messageInput) messageInput.placeholder = "Kindly describe the pledge or volunteer support you would like to offer.";
+      } else {
+        if (messageLabel) messageLabel.textContent = "How can we support you?";
+        if (messageInput) messageInput.placeholder = "Share your message with us.";
       }
     }
 
