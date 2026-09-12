@@ -1276,3 +1276,274 @@ footer {
 .image-card-wrapper:hover .image-card-zoom {
   transform: scale(1.08);
 }
+
+/* ==========================================================================
+   Mobile Optimization & Responsive Layout Enhancements
+   ========================================================================== */
+
+/* Prevent horizontal body overflow & lock scroll when menu open */
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Navigation Backdrop Overlay for Mobile */
+.nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(43, 26, 36, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tablet & Mobile Breakpoints (<= 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 1.25rem;
+  }
+  
+  .logo-main {
+    font-size: 1.1rem;
+  }
+  
+  .logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .nav-menu {
+    width: 85%;
+    max-width: 320px;
+    padding: 5rem 2rem 3rem;
+    align-items: flex-start;
+    gap: 1.75rem;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-cta {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .founder-img {
+    height: 420px !important;
+    object-fit: cover;
+  }
+
+  .portal-grid,
+  .pillar-grid,
+  .services-grid,
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Smartphone Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+  section {
+    padding: 2.75rem 1.25rem;
+  }
+
+  /* Fluid Headings for Mobile */
+  h1 {
+    font-size: clamp(2rem, 6.5vw, 2.75rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 5.5vw, 2.2rem) !important;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 4.5vw, 1.6rem) !important;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Hero Section Padding & Heights */
+  .hero-home,
+  .hero-ngo,
+  .hero-therapy {
+    padding-top: 7.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .hero-reveal {
+    padding: 2rem 1.25rem !important;
+    margin: 0 0.5rem !important;
+    border-radius: var(--border-radius-md) !important;
+  }
+
+  .hero-reveal h1 {
+    font-size: 2.1rem !important;
+  }
+
+  .hero-reveal .subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* Founder Profile on Mobile */
+  .founder-img {
+    height: 360px !important;
+  }
+
+  .founder-caption {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .founder-caption h3 {
+    font-size: 1.3rem;
+  }
+
+  .founder-text-content h2 {
+    font-size: 1.85rem !important;
+  }
+
+  .founder-text-content .quote {
+    font-size: 1.15rem;
+  }
+
+  /* Cards & Glass Containers */
+  .portal-content {
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .portal-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .pillar-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .glass-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .philosophy-banner {
+    padding: 4rem 1.25rem;
+  }
+
+  .philosophy-content h2 {
+    font-size: 1.85rem !important;
+  }
+
+  .philosophy-content p {
+    font-size: 1.05rem;
+  }
+
+  /* Form Elements Touch Target & Prevention of iOS Zoom */
+  .form-control, select, textarea {
+    font-size: 16px !important; /* Prevents auto zoom on iOS Safari */
+    padding: 0.85rem 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .river-divider svg {
+    height: 45px;
+  }
+
+  .lavender-stem-decor {
+    width: 110px;
+    height: 200px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+  }
+}
+
+/* Small Smartphone Breakpoint (<= 480px) */
+@media (max-width: 480px) {
+  section {
+    padding: 2.25rem 1rem;
+  }
+
+  .navbar {
+    padding: 0.85rem 1rem;
+  }
+
+  .logo-main {
+    font-size: 1rem;
+  }
+
+  .logo-sub {
+    display: none; /* Hide subtitle on tiny screens for clean header space */
+  }
+
+  .hero-reveal {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .hero-reveal h1 {
+    font-size: 1.85rem !important;
+  }
+
+  .founder-img {
+    height: 320px !important;
+  }
+
+  .image-card-zoom {
+    height: 200px;
+  }
+
+  .pillar-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .river-divider svg {
+    height: 30px;
+  }
+}
+

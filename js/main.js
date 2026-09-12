@@ -29,23 +29,42 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("scroll", checkScroll);
 
   // ==========================================================================
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle & Overlay
   // ==========================================================================
   const mobileToggle = document.getElementById("mobile-toggle");
   const navMenu = document.getElementById("nav-menu");
   
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener("click", function() {
-      mobileToggle.classList.toggle("open");
-      navMenu.classList.toggle("open");
+    // Create backdrop overlay element dynamically if not present
+    let backdrop = document.querySelector(".nav-backdrop");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.className = "nav-backdrop";
+      document.body.appendChild(backdrop);
+    }
+    
+    function toggleMenu(show) {
+      const isOpen = show !== undefined ? show : !navMenu.classList.contains("open");
+      mobileToggle.classList.toggle("open", isOpen);
+      navMenu.classList.toggle("open", isOpen);
+      backdrop.classList.toggle("active", isOpen);
+      document.body.classList.toggle("menu-open", isOpen);
+    }
+    
+    mobileToggle.addEventListener("click", function(e) {
+      e.stopPropagation();
+      toggleMenu();
+    });
+    
+    backdrop.addEventListener("click", function() {
+      toggleMenu(false);
     });
     
     // Close menu when clicking links
-    const navLinks = document.querySelectorAll(".nav-link");
+    const navLinks = document.querySelectorAll(".nav-link, .nav-cta");
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
-        mobileToggle.classList.remove("open");
-        navMenu.classList.remove("open");
+        toggleMenu(false);
       });
     });
   }
