@@ -138,8 +138,30 @@
     </div>
   </section>
 
+  <!-- Donate Section -->
+  <section id="donate" style="background-color: var(--color-white);">
+    <div class="section-header fade-in-element visible" style="margin-bottom: 2rem;">
+      <span class="badge badge-ngo">Support Our Mission</span>
+      <h2>Make a Donation</h2>
+      <p>Your generosity helps us empower, encourage, educate, and elevate women in our community.</p>
+    </div>
+    <div class="fade-in-element visible" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; max-width: 900px; margin: 0 auto;">
+      <div style="flex: 1 1 320px; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; box-shadow: 0 10px 30px rgba(44, 27, 37, 0.08); border-top: 4px solid var(--color-terracotta);">
+        <h3 style="margin-bottom: 0.75rem;">Donate Online</h3>
+        <p style="margin-bottom: 1.5rem;">Give securely by credit or debit card through our Authorize.Net checkout.</p>
+        <a id="donate-now-btn" class="btn btn-primary" href="https://simplecheckout.authorize.net/payment/CatalogPayment.aspx?LinkId=c2a91f70-0a49-47fb-8d24-8ea1cf49a43a" target="_blank" rel="noopener noreferrer" style="width: 100%;">Donate Now</a>
+      </div>
+      <div style="flex: 1 1 320px; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; box-shadow: 0 10px 30px rgba(44, 27, 37, 0.08); border-top: 4px solid var(--color-gold);">
+        <h3 style="margin-bottom: 0.75rem;">Donate with Zelle</h3>
+        <p style="margin-bottom: 1rem;">Send your gift through Zelle using our email address:</p>
+        <p style="font-weight: 600; font-size: 1.1rem; word-break: break-all; margin-bottom: 1.25rem;">support@risingwomenofvirtue.org</p>
+        <button id="copy-zelle-btn" type="button" class="btn btn-secondary" style="width: 100%;" onclick="navigator.clipboard.writeText('support@risingwomenofvirtue.org').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy Zelle Email', 2000); });">Copy Zelle Email</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact & Form Section -->
-  <section style="background-color: var(--color-white);">
+  <section style="background-color: var(--color-white); border-top: 1px solid rgba(44, 27, 37, 0.05);">
     <div class="contact-container">
       
       <!-- Info Column -->
@@ -227,28 +249,6 @@
         </form>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Donate Section -->
-  <section id="donate" style="border-top: 1px solid rgba(44, 27, 37, 0.05);">
-    <div class="section-header fade-in-element visible" style="margin-bottom: 2rem;">
-      <span class="badge badge-ngo">Support Our Mission</span>
-      <h2>Make a Donation</h2>
-      <p>Your generosity helps us empower, encourage, educate, and elevate women in our community.</p>
-    </div>
-    <div class="fade-in-element visible" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; max-width: 900px; margin: 0 auto;">
-      <div style="flex: 1 1 320px; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; box-shadow: 0 10px 30px rgba(44, 27, 37, 0.08); border-top: 4px solid var(--color-terracotta);">
-        <h3 style="margin-bottom: 0.75rem;">Donate Online</h3>
-        <p style="margin-bottom: 1.5rem;">Give securely by credit or debit card through our Authorize.Net checkout.</p>
-        <a id="donate-now-btn" class="btn btn-primary" href="https://simplecheckout.authorize.net/payment/CatalogPayment.aspx?LinkId=c2a91f70-0a49-47fb-8d24-8ea1cf49a43a" target="_blank" rel="noopener noreferrer" style="width: 100%;">Donate Now</a>
-      </div>
-      <div style="flex: 1 1 320px; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; box-shadow: 0 10px 30px rgba(44, 27, 37, 0.08); border-top: 4px solid var(--color-gold);">
-        <h3 style="margin-bottom: 0.75rem;">Donate with Zelle</h3>
-        <p style="margin-bottom: 1rem;">Send your gift through Zelle using our email address:</p>
-        <p style="font-weight: 600; font-size: 1.1rem; word-break: break-all; margin-bottom: 1.25rem;">support@risingwomenofvirtue.org</p>
-        <button id="copy-zelle-btn" type="button" class="btn btn-secondary" style="width: 100%;" onclick="navigator.clipboard.writeText('support@risingwomenofvirtue.org').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy Zelle Email', 2000); });">Copy Zelle Email</button>
-      </div>
     </div>
   </section>
 
