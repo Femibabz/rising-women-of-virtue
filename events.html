@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events - Rising Women of Virtue</title>
+  <meta name="description" content="See upcoming workshops, support group meetings, and community events hosted by Rising Women of Virtue.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+    .event-card {
+      background: var(--color-white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(44, 27, 37, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: eventIn 0.6s ease both;
+    }
+    .event-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(44, 27, 37, 0.14);
+    }
+    @keyframes eventIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .event-media {
+      position: relative;
+      height: 190px;
+      background: linear-gradient(135deg, var(--color-terracotta), var(--color-gold));
+    }
+    .event-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .event-date-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--color-white);
+      border-radius: 12px;
+      padding: 0.5rem 0.85rem;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      line-height: 1.1;
+    }
+    .event-month {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-terracotta);
+    }
+    .event-day {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+    .event-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .event-title { font-size: 1.35rem; margin-bottom: 0.75rem; }
+    .event-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      font-size: 0.92rem;
+      color: rgba(44, 27, 37, 0.75);
+      display: grid;
+      gap: 0.35rem;
+    }
+    .event-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+    .event-btn { margin-top: auto; width: 100%; text-align: center; }
+    .events-status {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      background: var(--color-white);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(44, 27, 37, 0.06);
+      font-size: 1.05rem;
+    }
+    .events-loader {
+      width: 42px; height: 42px;
+      margin: 0 auto 1rem;
+      border: 4px solid rgba(44, 27, 37, 0.1);
+      border-top-color: var(--color-terracotta);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header-container scrolled" id="main-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo-wrapper">
+        <img src="images/logo.png" alt="Rising Women of Virtue Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-main">Rising Women of Virtue</span>
+          <span class="logo-sub">Rooted in Faith. Growing in Purpose.</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="programs.html" class="nav-link">Our Programs</a></li>
+        <li><a href="events.html" class="nav-link active">Events</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html?interest=ngo" class="nav-cta">Join a Group</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-ngo" style="position: relative; overflow: hidden; padding-top: 9.5rem; padding-bottom: 4.5rem;">
+    <div class="moving-river-container">
+      <div class="moving-river-bg"></div>
+    </div>
+    <div class="petal-container" style="z-index: 2;"></div>
+
+    <div class="hero-ngo-content fade-in-element visible hero-reveal" style="text-align: center; position: relative; z-index: 5; background: rgba(43, 26, 36, 0.65); padding: 3rem; border-radius: var(--border-radius-md); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: var(--color-white); max-width: 850px; margin: 0 auto;">
+      <span class="badge badge-ngo" style="background: rgba(209, 164, 112, 0.25); color: var(--color-gold);">Gather With Us</span>
+      <h1 style="color: var(--color-white);">Upcoming Events</h1>
+      <p style="color: rgba(255, 255, 255, 0.9); margin: 0 auto; max-width: 750px;">Join our workshops, empowerment circles, and community gatherings. Every event is a chance to connect, grow, and rise together.</p>
+    </div>
+
+    <div class="river-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,65 C240,25 480,95 720,40 C960,10 1200,80 1440,45 L1440,120 L0,120 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Events List -->
+  <section id="events" style="background-color: var(--color-white);">
+    <div id="events-status" class="events-status">
+      <div class="events-loader" aria-hidden="true"></div>
+      Loading upcoming events…
+    </div>
+    <div id="events-list" class="events-grid" aria-live="polite"></div>
+
+    <div style="text-align: center; margin-top: 3.5rem;">
+      <p style="margin-bottom: 1rem;">Have a question about an event?</p>
+      <a id="events-contact-btn" href="contact.html#contact-section" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Rising Women of Virtue</h3>
+        <p>A non-profit organization dedicated to empowering, encouraging, educating, and elevating women to embrace their purpose.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Our Programs</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact &amp; Join</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="contact.html?interest=ngo">Join a Group</a></li>
+          <li><a href="contact.html?interest=volunteer">Volunteer</a></li>
+          <li><a href="contact.html#donate">Donate</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rising Women of Virtue. All rights reserved. Rooted in faith. Growing in purpose.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>
