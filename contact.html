@@ -158,10 +158,24 @@
         <button id="copy-zelle-btn" type="button" class="btn btn-secondary" style="width: 100%;" onclick="navigator.clipboard.writeText('support@risingwomenofvirtue.org').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy Zelle Email', 2000); });">Copy Zelle Email</button>
       </div>
     </div>
+
+    <!-- Scroll to Contact -->
+    <style>
+      .scroll-contact-wrap { text-align: center; margin-top: 3rem; }
+      .scroll-contact-btn { display: inline-flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; }
+      .scroll-contact-arrow { font-size: 1.4rem; color: var(--color-terracotta); animation: scrollBounce 1.6s ease-in-out infinite; }
+      @keyframes scrollBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    </style>
+    <div class="scroll-contact-wrap">
+      <a id="scroll-contact-btn" href="#contact-section" class="scroll-contact-btn" onclick="event.preventDefault(); document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">
+        <span class="btn btn-primary">Contact Us</span>
+        <span class="scroll-contact-arrow" aria-hidden="true">&#8964;</span>
+      </a>
+    </div>
   </section>
 
   <!-- Contact & Form Section -->
-  <section style="background-color: var(--color-white); border-top: 1px solid rgba(44, 27, 37, 0.05);">
+  <section id="contact-section" style="background-color: var(--color-white); border-top: 1px solid rgba(44, 27, 37, 0.05);">
     <div class="contact-container">
       
       <!-- Info Column -->
